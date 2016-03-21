@@ -1,6 +1,8 @@
 package disk
 
 import (
+	"strings"
+
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
 	slc "github.com/maximilien/softlayer-go/softlayer"

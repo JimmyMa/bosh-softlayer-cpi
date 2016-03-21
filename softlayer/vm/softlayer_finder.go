@@ -2,6 +2,7 @@ package vm
 
 import (
 	"strconv"
+	"strings"
 
 	bosherr "github.com/cloudfoundry/bosh-utils/errors"
 	boshlog "github.com/cloudfoundry/bosh-utils/logger"
