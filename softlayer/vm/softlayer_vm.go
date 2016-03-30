@@ -143,12 +143,12 @@ func (vm SoftLayerVM) DeleteVM() error {
 		return bosherr.WrapError(nil, "Did not delete SoftLayer VirtualGuest from client")
 	}
 
-	err = vm.postCheckActiveTransactionsForDeleteVM(vm.softLayerClient, vmCID)
-	if err != nil {
-		if !strings.Contains(err.Error(), "HTTP error code") {
-			return bosherr.WrapError(err, fmt.Sprintf("Waiting for VirtualGuest `%d` to have no pending transactions after deleting vm", vmCID))
-		}
-	}
+	//err = vm.postCheckActiveTransactionsForDeleteVM(vm.softLayerClient, vmCID)
+	//if err != nil {
+	//	if !strings.Contains(err.Error(), "HTTP error code") {
+	//		return bosherr.WrapError(err, fmt.Sprintf("Waiting for VirtualGuest `%d` to have no pending transactions after deleting vm", vmCID))
+	//	}
+	//}
 
 	if strings.ToUpper(common.GetOSEnvVariable("OS_RELOAD_ENABLED", "TRUE")) == "TRUE" {
 		db, err := bslcvmpool.OpenDB(bslcvmpool.SQLITE_DB_FILE_PATH)
